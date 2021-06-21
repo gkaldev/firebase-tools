@@ -46,7 +46,9 @@ import { Options } from "../options";
 import { ParsedTriggerDefinition } from "./functionsEmulatorShared";
 
 async function getAndCheckAddress(emulator: Emulators, options: Options): Promise<Address> {
-  let host = options.config.src.emulators?.[emulator]?.host || Constants.getDefaultHost(emulator);
+
+  options.host && utils.assertIsString(options.host);
+  let host = options.host || options.config.src.emulators?.[emulator]?.host || Constants.getDefaultHost(emulator);
   if (host === "localhost" && utils.isRunningInWSL()) {
     // HACK(https://github.com/firebase/firebase-tools-ui/issues/332): Use IPv4
     // 127.0.0.1 instead of localhost. This, combined with the hack in

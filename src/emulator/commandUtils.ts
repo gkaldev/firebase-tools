@@ -35,6 +35,13 @@ export const DESC_INSPECT_FUNCTIONS =
 export const FLAG_IMPORT = "--import [dir]";
 export const DESC_IMPORT = "import emulator data from a previous export (see emulators:export)";
 
+export const FLAG_HOST = "--host [dir]";
+export const DESC_HOST =
+  "Specify the host for the emulators to listen on. You can also" +
+  " specify 0.0.0.0 to listen on all interfaces";
+export const HOST_USAGE_ERROR =
+  "--host must be provided a valid host address or 0.0.0.0 to lisen on all interfaces";
+
 export const FLAG_EXPORT_ON_EXIT_NAME = "--export-on-exit";
 export const FLAG_EXPORT_ON_EXIT = `${FLAG_EXPORT_ON_EXIT_NAME} [dir]`;
 export const DESC_EXPORT_ON_EXIT =
